@@ -10,7 +10,6 @@
                 "${relativeFile}"
             ],
             "cwd": "${workspaceRoot}",
-            "protocol": "inspector"
         }
     ]
 }
