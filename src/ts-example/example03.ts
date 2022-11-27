@@ -4,11 +4,11 @@ interface TargetType{
     address?: string;
   }
 
-type HandleType<T,K extends string> = {
-  [P in keyof Omit<T, K>]: Omit<T, K>[P];
-} & { address: string };
+type HandleType<T,K extends string,P extends any> = Omit<T, K> & { [ prop in K]: P};
 
-type FinalType = HandleType<TargetType, 'address'>
+type FinalType = HandleType<TargetType, 'address',string>
 
 declare let demo:FinalType
+
+
 
